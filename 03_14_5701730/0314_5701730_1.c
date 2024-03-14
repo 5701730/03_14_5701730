@@ -7,9 +7,13 @@
 
 int main() {
 	int num = 0;
-	int n;
 	int sum = 0;
-	for (int num = 2; num <= n; num++) {
+
+	clock_t start, stop;
+	double duration;
+	start = clock();
+
+	for (int num = 2; num <= 100; num++) {
 		int count = 0;
 		for (int i = 1; i <= num; i++)
 			if (num % i == 0)
@@ -18,6 +22,11 @@ int main() {
 			sum += num;
 
 	}
+	stop = clock();
+	duration = (double)(stop - start) / CLOCKS_PER_SEC;
+	printf("수행시간은 %f초입니다.\n", duration);
+
+	
 
 
 	printf("합:%d", sum);
